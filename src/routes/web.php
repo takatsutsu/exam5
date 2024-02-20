@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\RegisterController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ContactController::class, 'index']);
+Route::get('/confirm', [ContactController::class, 'confirm']);
+Route::get('/thanks', [ContactController::class, 'thanks']);
+Route::get('/register', [RegisterController::class, 'register']);
+Route::get('/register/registerthanks', [RegisterController::class, 'store']);
+// Route::post('/register', [RegisterController::class, 'store']);

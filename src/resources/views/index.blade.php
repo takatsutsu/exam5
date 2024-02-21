@@ -38,7 +38,7 @@
         　　<div class="main_head">
             <h2>Contact</h2>
         </div>
-        <form class="form" action="/register/registerthanks/" method="get">
+        <form class="form" action="/confirm" method="post">
             @csrf
             <div class="form_main">
                 <p>お名前<span>※</span>
@@ -56,9 +56,9 @@
                     @enderror
                 </div>
                 <p>性別<span>※</span>
-                    <input type="radio" name="gender" value="1" checked="checked">男性
-                    <input type="radio" name="gender" value="2">女性
-                    <input type="radio" name="gender" value="3">その他
+                    <input type="radio" name="gender" value="男性" checked="checked">男性
+                    <input type="radio" name="gender" value="女性">女性
+                    <input type="radio" name="gender" value="その他">その他
                 </p>
                 </p>
                 <p>メールアドレス<span>※</span>
@@ -71,48 +71,52 @@
                 </div>
 
                 <p>電話番号<span>※</span>
-                    <input type="tel" name="tel" placeholder="080-1234-5678" value="{{ old('tel') }}" />
+                    <input type="tel" name="tell" placeholder="080-1234-5678" value="{{ old('tell') }}" />
                 </p>
                 <div class="form__error">
-                    @error('tel')
+                    @error('tell')
                     {{ $message }}
                     @enderror
-                    <p>住所<span>※</span>
-                        <input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷２−3" value="{{ old('address') }}" />
-                    </p>
-                    <div class="form__error">
-                        @error('address')
-                        {{ $message }}
-                        @enderror
-                    </div>
-                    <p>建物名
-                        <input type="text" name="bulding" placeholder="例：千駄ヶ谷マンション101" value="{{ old('bulding') }}" />
-                    </p>
+                </div>
+                <p>住所<span>※</span>
+                    <input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷２−3" value="{{ old('address') }}" />
+                </p>
+                <div class="form__error">
+                    @error('address')
+                    {{ $message }}
+                    @enderror
+                </div>
 
-                    <p>お問い合わせの種類<span>※</span>
-                        <input type="text" name="inqcate" placeholder="例：" value="{{ old('inqcate') }}" />
-                    </p>
-                    <div class="form__error">
-                        @error('inqcate')
-                        {{ $message }}
-                        @enderror
-                    </div>
-                    <p>お問い合わせ内容<span>※</span>
-                    </p>
-                    <textarea name="inquire" cols="50" rows="5" placeholder="問い合わせ内容を入力ください" 　value="{{ old('inquire') }}"></textarea>
-                    </p>
-                    <div class="form__error">
-                        @error('inquire')
-                        {{ $message }}
-                        @enderror
-                    </div>
+                <p>建物名
+                    <input type="text" name="building" placeholder="例：千駄ヶ谷マンション101" value="{{ old('building') }}" />
+                </p>
+
+                <p>お問い合わせの種類<span>※</span>
+                    <input type="text" name="category_ID" placeholder="例：" value="{{ old('category_ID') }}" />
+                </p>
+
+                <div class="form__error">
+                    @error('category_ID')
+                    {{ $message }}
+                    @enderror
+                </div>
+                <p>お問い合わせ内容<span>※</span>
+                    <textarea name="detail" cols="50" rows="5" placeholder="問い合わせ内容を入力ください" value="{{ old('detail') }}"></textarea>
+                </p>
+
+                <div class="form__error">
+                    @error('detail')
+                    {{ $message }}
+                    @enderror
+                </div>
 
 
 
 
-                    <div class="form_btn">
-                        <input type="submit" value="確認画面" />
-                    </div>
+
+                <div class="form_btn">
+                    <input type="submit" value="確認画面" />
+                </div>
 
         </form>
 

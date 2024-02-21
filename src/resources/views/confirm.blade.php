@@ -38,15 +38,15 @@
         　　<div class="main_head">
             <h2>Confirm</h2>
         </div>
-        <form class="form" action="/register/registerthanks/" method="get">
+        <form class="form" action="/thanks/" method="get">
             @csrf
             <div class="form_main">
-                <table class="form_table"  border="1">
+                <table class="form_table" border="1">
                     <tr>
                         <th>お名前<span>※</span></th>
                         <td>
-                            <input type="text" name="first_name" placeholder="例：山田" value="{{ old('first_name') }}" />
-                            <input type="text" name="last_name" placeholder="例：太郎" value="{{ old('last_name') }}" />
+                            <input type="text" name="first_name" value="{{ $contact['first_name'] }}" readonly />
+                            <input type="text" name="last_name" value="{{ $contact['last_name'] }}" readonly />
                         </td>
                     </tr>
                     <!-- <div class="form__error">
@@ -61,21 +61,19 @@
                     </div> -->
                     <tr>
                         <th>
-                            性別<span>※</span>
+                            性別<span></span>
                         </th>
                         <td>
-                            <input type="radio" name="gender" value="1" checked="checked">男性
-                            <input type="radio" name="gender" value="2">女性
-                            <input type="radio" name="gender" value="3">その他
+                            <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly />
                         </td>
                     </tr>
 
                     <tr>
                         <th>
-                            メールアドレス<span>※</span>
+                            メールアドレス<span></span>
                         </th>
                         <td>
-                            <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}" />
+                            <input type="email" name="email" value="{{ $contact['email'] }}" readonly />
                         </td>
                     </tr>
                     <!-- <div class="form__error">
@@ -85,8 +83,8 @@
                     </div> -->
 
                     <tr>
-                        <th>電話番号<span>※</span></th>
-                        <td><input type="tel" name="tel" placeholder="080-1234-5678" value="{{ old('tel') }}" /></td>
+                        <th>電話番号<span></span></th>
+                        <td><input type="tel" name="tell" value="{{ $contact['tell'] }}" readonly /></td>
                     </tr>
                     <!-- <div class="form__error">
                         @error('tel')
@@ -94,8 +92,8 @@
                         @enderror -->
 
                     <tr>
-                        <th>住所<span>※</span></th>
-                        <td><input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷２−3" value="{{ old('address') }}" />
+                        <th>住所<span></span></th>
+                        <td><input type="text" name="address" value="{{ $contact['address'] }}" readonly />
                         </td>
                     </tr>
 
@@ -106,12 +104,16 @@
                     </div> -->
                     <tr>
                         <th>建物名</th>
-                        <td><input type="text" name="bulding" placeholder="例：千駄ヶ谷マンション101" value="{{ old('bulding') }}" /></td>
+                        <td>
+                            <input type="text" name="building" value="{{ $contact['building'] }}" readonly />
+                        </td>
                     </tr>
 
                     <tr>
-                        <th>お問い合わせの種類<span>※</span></th>
-                        <td><input type="text" name="inqcate" placeholder="例：" value="{{ old('inqcate') }}" /></td>
+                        <th>お問い合わせの種類<span></span></th>
+                        <td>
+                            <input type="text" name="category_ID" value="{{ $contact['category_ID'] }}" readonly />
+                        </td>
                     </tr>
                     <!-- <div class="form__error">
                         @error('inqcate')
@@ -121,11 +123,11 @@
             <tr>
                 <th>お問い合わせ内容<span>※</span></th>
                 <td>
-                    <textarea name="inquire" cols="50" rows="5" placeholder="問い合わせ内容を入力ください" 　value="{{ old('inquire') }}"></textarea>
+                    <textarea name="detail" cols="50" rows="5" readonly>{{ $contact['detail']}}</textarea>
                 </td>
             </tr>
             <!-- <div class="form__error">
-                @error('inquire')
+                @error('detail')
                 {{ $message }}
                 @enderror -->
             </div>

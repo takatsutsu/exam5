@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\RegisterController;
-
-
+use App\Models\Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +17,8 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', [ContactController::class, 'index']);
-Route::get('/confirm', [ContactController::class, 'confirm']);
-Route::get('/thanks', [ContactController::class, 'thanks']);
+Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::get('/register', [RegisterController::class, 'register']);
+// Route::get('/thanks', [ContactController::class, 'store']);
 Route::get('/register/registerthanks', [RegisterController::class, 'store']);
-// Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/thanks', [ContactController::class, 'store']);

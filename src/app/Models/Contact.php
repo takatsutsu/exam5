@@ -19,8 +19,17 @@ class Contact extends Model
         'category_ID',
         'detail',
     ];
+
+    public static $rules = array(
+    'first_name' => 'required',
+        'last_name' => 'required',
+    'tell' => 'integer|min:10|max:11',
+    'address' => 'required'
+    
+  );
+
     public function category()
-  　　 {
-  　     return $this->belongsTo(Category::class);
-   }
+            {
+        return $this->belongsTo(Category::class);
+            }
 }

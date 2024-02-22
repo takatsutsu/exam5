@@ -112,7 +112,7 @@
                     <tr>
                         <th>お問い合わせの種類<span></span></th>
                         <td>
-                            <input type="text" name="category_ID" value="{{ $contact['category_ID'] }}" readonly />
+                            <input type="text" name="building" value="{{ $contact['category_ID'] }}" readonly />
                         </td>
                     </tr>
                     <!-- <div class="form__error">

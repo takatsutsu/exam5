@@ -26,7 +26,7 @@
                 FashionablyLate
             </h1>
             <div class="header_inner_right">
-                <a href="">ログイン</a>
+                <button onclick="location.href='/register' " style="background-color:yellow; color:red;">編集画面</button>
                 <!-- <a href="">事業内容</a>
                     <a href="">採用情報</a>
                     <a href="">お問い合わせ</a> -->
@@ -35,10 +35,10 @@
     </header>
 
     <main>
-        　　<div class="main_head">
+        <div class="main_head">
             <h2>Confirm</h2>
         </div>
-        <form class="form" action="/thanks/" method="get">
+        <form class="form" action="/thanks" method="post">
             @csrf
             <div class="form_main">
                 <table class="form_table" border="1">

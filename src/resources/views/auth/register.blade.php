@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FashionablyLate</title>
+    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
+    <!-- <link rel="stylesheet" href="{{ asset('css/reset.css') }}" /> -->
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}" />
+</head>
+
+<body>
+    <!--ヘッダ-->
+    <!-- <header class="header">
+            <div class="header_inner">
+                <div class="header_inner_left">
+                    FashionablyLate
+                </div>
+            </div>
+        </header> -->
+    <header class="header">
+        <div class="header_inner">
+            <h1 class="header_inner_left">
+                FashionablyLate
+            </h1>
+            <div class="header_inner_right">
+                <a href="">ログイン</a>
+                <!-- <a href="">事業内容</a>
+                    <a href="">採用情報</a>
+                    <a href="">お問い合わせ</a> -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        　　<div class="main_head">
+            <h2>Register</h2>
+        </div>
+        <form class="form" action="/" method="get">
+            @csrf
+            <div class="form_main">
+                <p>お名前 <input type="text" name="name" placeholder="" value="{{ old('name') }}" />
+                </p>
+                <div class="form__error">
+                    @error('name')
+                    {{ $message }}
+                    @enderror
+                </div>
+                <p>メールアドレス
+                    <input type="email" name="email" placeholder="" value="{{ old('email') }}" />
+                </p>
+                <div class="form__error">
+                    @error('email')
+                    {{ $message }}
+                    @enderror
+                </div>
+                </p>
+                <p>パスワード <input type="password" name="password" />
+                </p>
+                <div class="form__error">
+                    @error('password')
+                    {{ $message }}
+                    @enderror
+                </div>
+                <p>パスワード（確認用） <input type="password" name="password_confirmation" />
+
+                <div class="form__error">
+                    @error('password_confirmation')
+                    {{ $message }}
+                    @enderror
+                </div>
+
+
+                <div class="form_btn">
+                    <input type="submit" />
+                </div>
+
+        </form>
+
+    </main>
+</body>
+
+</html>

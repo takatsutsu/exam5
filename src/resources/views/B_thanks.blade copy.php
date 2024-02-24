@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/registerthanks.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/thanks.css') }}" />
 </head>
 
 <body>
@@ -24,7 +24,6 @@
             <div class="header_inner_left">
                 Contact Form
             </div>
-            <button onclick="location.href='/' " style="background-color:yellow; color:red;">ログイン画面</button>
             <!-- <div class="header_inner_right">
                     <a href="">ホーム</a>
                     <a href="">事業内容</a>
@@ -36,11 +35,11 @@
 
     <main>
         　　<div class="main_head">
-            <h2>ユーザ登録完了</h2>
+            <h2>お問い合わせ内容確認</h2>
         </div>
-        <form action="">
-            <div class="form_main">
-                ユーザ登録完了
+        <form action="/" method="get">
+            <div class=" form_main">
+                お問い合わせありがとうございます
             </div>
         </form>
 

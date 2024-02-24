@@ -36,22 +36,20 @@
 
     <main>
         　　<div class="main_head">
-            <h2>Register</h2>
+            <h2>login</h2>
         </div>
-        <form class="form" action="/register/registerthanks/" method="get">
+        <form class="form" action="/" method="get">
             @csrf
             <div class="form_main">
-                <p>お名前</p>
-                <p>
+                <!-- <p>お名前</p> -->
+                <!-- <p>
                     <input type="text" name="name" placeholder="例：山田太郎" value="{{ old('name') }}" />
-                </p>
-                <div class="form__error">
+                </p> -->
+                <!-- <div class="form__error">
                     @error('name')
                     {{ $message }}
-                    @enderror
-                </div>
-                <p>メールアドレス </p>
-                <p>
+                    @enderror -->
+                <p>メールアドレス
                     <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}" />
                 <div class="form__error">
                     @error('email')
@@ -59,8 +57,7 @@
                     @enderror
                 </div>
                 </p>
-                <p>パスワード</p>
-                <p><input type="password" name="password" placeholder="coachtech1106" value="{{ old('password') }}" />
+                <p>パスワード <input type="password" name="password" placeholder="coachtech1106" value="{{ old('password') }}" />
                 </p>
                 <div class="form__error">
                     @error('password')
@@ -69,9 +66,9 @@
                 </div>
 
                 <div class="form_btn">
-                    <input type="submit" />
+                    <input type="submit" value="ログイン" />
                 </div>
-
+            </div>
         </form>
 
     </main>

@@ -37,10 +37,14 @@
         　　<div class="main_head">
             <h2>お問い合わせ内容確認</h2>
         </div>
-        <form action="">
-            <div class="form_main">
+        <form action="/" method="get">
+            <div class=" form_main">
                 お問い合わせありがとうございます
             </div>
+            <div class="form_btn">
+                <input type="submit" value="HOME" />
+            </div>
+
         </form>
 
     </main>
